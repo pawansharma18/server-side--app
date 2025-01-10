@@ -4,7 +4,6 @@ on:
     push:
       branches:
         - server-side--app
-
 jobs:
   build-and-deploy:
     runs-on: [ubuntu-latest]
