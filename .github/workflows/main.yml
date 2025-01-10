@@ -3,7 +3,7 @@ name: main
 on:
     push:
       branches:
-        - server-side--app
+        - main
 jobs:
   build-and-deploy:
     runs-on: [ubuntu-latest]
