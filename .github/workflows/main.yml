@@ -13,7 +13,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
       - name: Install Dependencies
         run: npm install
       - name: Generate Deployment Package
@@ -25,6 +25,7 @@ jobs:
           aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           application_name: my-appbackend
           environment_name: My-appbackend-env
-          version_label: ${{ github.sha }}
+          version_label: ${{ github.sha }}-${{ github.run_id }}
+
           region: us-east-1
           deployment_package: nodejs-app-build.zip
